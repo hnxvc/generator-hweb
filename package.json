@@ -1,0 +1,29 @@
+{
+  "name": "generator-hweb",
+  "version": "1.0.0",
+  "description": "Generator hweb",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoanx94/generator-hweb.git"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "hoanx <nguyenxuanhoa1594@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hoanx94/generator-hweb/issues"
+  },
+  "homepage": "https://github.com/hoanx94/generator-hweb#readme",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "generator-common": "^0.2.0",
+    "lodash": "^4.14.2",
+    "yeoman-generator": "^0.24.1",
+    "yosay": "^1.2.0"
+  }
+}
