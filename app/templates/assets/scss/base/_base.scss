@@ -6,11 +6,7 @@
 @font-face {
   font-family: 'OpenSans';
   src: font('opensans/OpenSans-Regular.eot');
-  src: font('opensans/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
-    font('opensans/OpenSans-Regular.woff') format('woff'),
-    font('opensans/OpenSans-Regular.woff2') format('woff2'),
-    font('opensans/OpenSans-Regular.ttf') format('truetype'),
-    font('opensans/OpenSans-Regular.svg#OpenSans') format('svg');
+  src: font('opensans/OpenSans-Regular.eot?#iefix') format('embedded-opentype'), font('opensans/OpenSans-Regular.woff') format('woff'), font('opensans/OpenSans-Regular.woff2') format('woff2'), font('opensans/OpenSans-Regular.ttf') format('truetype'), font('opensans/OpenSans-Regular.svg#OpenSans') format('svg');
   font-style: normal;
   font-weight: $font-regular;
 }
@@ -18,26 +14,16 @@
 @font-face {
   font-family: 'OpenSans';
   src: font('opensans/OpenSans-Bold.eot');
-  src: font('opensans/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
-    font('opensans/OpenSans-Bold.woff') format('woff'),
-    font('opensans/OpenSans-Bold.woff2') format('woff2'),
-    font('opensans/OpenSans-Bold.ttf') format('truetype'),
-    font('opensans/OpenSans-Bold.svg#OpenSans') format('svg');
+  src: font('opensans/OpenSans-Bold.eot?#iefix') format('embedded-opentype'), font('opensans/OpenSans-Bold.woff') format('woff'), font('opensans/OpenSans-Bold.woff2') format('woff2'), font('opensans/OpenSans-Bold.ttf') format('truetype'), font('opensans/OpenSans-Bold.svg#OpenSans') format('svg');
   font-style: normal;
   font-weight: $font-bold;
 }
-
-
 
 /* --------------------------------------------------------------------------
    Basic style
    -------------------------------------------------------------------------- */
 html {
   box-sizing: border-box;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
 }
 
 img {
@@ -53,6 +39,34 @@ img {
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
 }
 
 .browserupgrade {
@@ -71,31 +85,12 @@ a {
     text-decoration: underline;
   }
 }
-
-.container {
-  max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 100%;
-}
-
-.container:before {
-  content: '';
-  display: table;
-}
-
-.container:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
+<%-containerClass%>
 body {
   color: $text-color;
   font-family: $font-family-text;
-  font-size:$font-size-regular;
+  font-size: $font-size-regular;
+  line-height: 1.4;
 }
 
 /* --------------------------------------------------------------------------

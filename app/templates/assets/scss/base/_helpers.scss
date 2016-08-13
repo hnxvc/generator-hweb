@@ -2,66 +2,19 @@
    CSS helper classes
    -------------------------------------------------------------------------- */
 
-.f-left {
-  float: left;
-}
-
-.f-right {
-  float: right;
-}
-
-.align-left {
-  text-align: left;
-}
-
-.align-right {
-  text-align: right;
-}
-
-.align-center {
-  text-align: center;
-}
-.wrap-v-center{
-  position:relative;
-  height: 100%;
-}
-.v-center {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  text-align: center;
-  left: 0;
-  right: 0;
-}
-
-.inline-block {
-  display: inline-block;
-}
-
-
-.clear {
-  clear: both;
-  float: none;
-}
-
-.clearfix::after {
-  clear: both;
-  content: '';
-  display: table;
-}
+/*
+ * Hide visually and from screen readers
+ */
 
 .hidden {
   display: none !important;
 }
 
-.hide-text {
-  overflow: hidden;
-  padding: 0;
-  text-indent: 101%;
-  white-space: nowrap;
-}
-
-.visually-hidden {
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+.visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -70,4 +23,82 @@
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+.invisible {
+  visibility: hidden;
+}
+<%-clearfixClass%>
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print {
+  *, *:before, *:after, *:first-letter, *:first-line {
+    background: transparent !important;
+    color: #000 !important; /* Black prints faster:
+                                       http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a, a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " ("attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " ("attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]:after, a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+  tr, img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2, h3 {
+    page-break-after: avoid;
+  }
 }

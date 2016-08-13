@@ -106,6 +106,14 @@ $screen-large: 1280px;
   }
 }
 
+@mixin screen-retina(){
+  @media print, (-webkit-min-device-pixel-ratio:1.25), (min-resolution:1.25dppx), (min-resolution:120dpi) {
+    @content;
+  }
+}
+
+
+
 
 // --------------------------------------------------------------------------
 // This file contains all application-wide Sass functions.

@@ -3,10 +3,10 @@
 
   $(function() {
 
+    <%-checkwow%>
 
-    /* --------------------------------------------------------------------------
-       Main slide
-       -------------------------------------------------------------------------- */
+    /* Main slide
+    -------------------------------------------------------------------------- */
 
     function activeAnimate(slide, currentSlide) {
 
@@ -40,15 +40,13 @@
 
     var animate_slide = $('.<%=prefix%>-main-slide');
 
-    /* Init slide
-    -------------------------------------------------------------------------- */
+    // Init slide
     animate_slide.on('init', function() {
       $(this).addClass("first");
       $(".<%=prefix%>-overlay-slide").fadeOut();
     });
 
-    /* Setup slide
-    -------------------------------------------------------------------------- */
+    // Setup slide
     animate_slide.slick({
       dots: true,
       fade: true,
@@ -57,8 +55,8 @@
       arrows: false,
     });
 
-    /* Active animate first run times
-    -------------------------------------------------------------------------- */
+
+    // Active animate first run times
     animate_slide.on('setPosition', function() {
       if ($(this).hasClass("first")) {
         activeAnimate($(this), 0);
@@ -67,16 +65,13 @@
     });
 
 
-    /* After change Slide
-    -------------------------------------------------------------------------- */
+    // After change Slide
     animate_slide.on('afterChange', function(event, slick, currentSlide) {
       activeAnimate($(this), currentSlide);
     });
 
-
-    /* --------------------------------------------------------------------------
-       Mobile Navigation
-       -------------------------------------------------------------------------- */
+    /* Mobile Navigation
+    -------------------------------------------------------------------------- */
 
     function rstAnimateRight(element, number) {
       $(element).animate({
