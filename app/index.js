@@ -169,13 +169,13 @@ module.exports = generators.Base.extend({
         this.checkbootstrap = '\'vendor/normalize\',';
         this.containerClass = "\n.container {\n  max-width: $max-width;\n  margin-left: auto;\n  margin-right: auto;\n  padding-left: 20px;\n  padding-right: 20px;\n  width: 100%;\n}\n\n.container:before {\n  content: '';\n  display: table;\n}\n\n.container:after {\n  content: '';\n  display: table;\n  clear: both;\n}";
         this.clearfixClass = "\n.clearfix:before, .clearfix:after {\n  content: \" \";\n  display: table;\n}\n\n.clearfix:after{\n  clear: both;\n}\n";
-
+        this.checkComment = '- Normalize';
       }else{
 
         this.checkbootstrap = '\'vendor/bootstrap\',\n\t\'vendor/bootstrap-theme\',';
         this.copy('assets/scss/vendor/_bootstrap.scss','assets/scss/vendor/_bootstrap.scss');
         this.copy('assets/scss/vendor/_bootstrap-theme.scss','assets/scss/vendor/_bootstrap-theme.scss');
-
+        this.checkComment = '- Bootstrap + Bootstrap theme';
       }
 
 
@@ -208,6 +208,7 @@ module.exports = generators.Base.extend({
         this.destinationPath('assets/scss/main.scss'),
         {
           checkbootstrap:this.checkbootstrap,
+          checkComment : this.checkComment
         }
       );
 

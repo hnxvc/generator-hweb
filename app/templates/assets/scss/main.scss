@@ -10,21 +10,20 @@
  * Summary:
  *
  *    1. VENDOR
- *        - 1.1. Animate
- *        - 1.2. Normalize
- *        - 1.3. Slick
- *        - 1.4. Slick theme
+ *        - Animate
+ *        <%-checkComment%>
+ *        - Slick + Slick themes
  *
  *    2. BASE STUFF
- *        - 2.1. Base
- *        - 2.2. Helpers
+ *        - Base
+ *        - Helpers
  *
  *    3. LAYOUT RELATED SECTIONS
- *        - 3.1. Header
- *        - 3.2. Footer
+ *        - Header
+ *        - Footer
  *
  *    4. PAGE SPECIFIC STYLES
- *        - 5.1. Home
+ *        - Home
  *
  */
 
@@ -37,8 +36,8 @@
    1: Vendors
    ========================================================================== */
 @import
-  <%-checkbootstrap%>
   'vendor/animate',
+  <%-checkbootstrap%>
   'vendor/slick',
   'vendor/slick-theme';
 
