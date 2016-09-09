@@ -56,7 +56,7 @@ gulp.task('scripts',function(){
           .pipe($.rename({suffix:'.min'}))
           // .pipe($.uglify())
           .pipe($.sourcemaps.write('./'))
-          .pipe(gulp.dest(config.build_js_vendor))
+          .pipe(gulp.dest(config.build_js))
           .pipe($.browserSync.stream());
 });
 
@@ -78,7 +78,7 @@ gulp.task('default',['styles','scripts','compress-js'],function(){
 
 // watch all
 
-gulp.task('watch-all',function(){
+gulp.task('watch',function(){
 
   gulp.watch(config.scss,['styles']);
   gulp.watch(config.js_vendors,['scripts']);
